@@ -1,0 +1,13 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/dcnsdomains/dcns-subgraph', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/dcnsdomains/dcns-subgraph']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'dcns-subgraph', '--image', 'gcr.io/dcnsdomains/dcns-subgraph', '--region', 'asia-south1']
+images:
+- gcr.io/dcnsdomains/dcns-subgraph
