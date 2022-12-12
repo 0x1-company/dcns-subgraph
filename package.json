@@ -14,7 +14,7 @@
     "docker:deploy-local": "graph deploy graphprotocol/ens-dogechain --debug --ipfs http://ens-app_ipfs_1:5001 --node http://ens-app_graph-node_1:8020/ --version-label 0.0.1",
     "docker:remove-local": "graph remove graphprotocol/ens-dogechain --node http://ens-app_graph-node_1:8020",
     "build": "graph build",
-    "deploy": "graph deploy dcnsdomains/dcns --ipfs http://tomoki@18.224.36.147:5001 --node http://tomoki@18.224.36.147:8020",
+    "deploy": "graph deploy dcnsdomains/dcns --ipfs http://172.31.33.27:5001 --node http://172.31.33.27:8020",
     "watch-local": "graph deploy graphprotocol/ens-dogechain --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001",
     "clean": "rm -r src/types && rm -r build"
   },
